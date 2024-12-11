@@ -3,8 +3,8 @@ version: '3.8'
 services:
   language-teacher-api:
     build:
-      context: .
-      dockerfile: Backend/LanguageTeacher/LanguageTeacher.API/Dockerfile
+      context: Backend/LanguageTeacher/LanguageTeacher/LanguageTeacher.API
+      dockerfile: Dockerfile
     environment:
       ASPNETCORE_URLS: http://+:80
       ASPNETCORE_ENVIRONMENT: Development

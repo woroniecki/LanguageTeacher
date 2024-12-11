@@ -1,29 +1,29 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
+﻿# Etap bazowy (ASP.NET runtime)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 80
+EXPOSE 443
 
-
-# This stage is used to build the service project
+# Etap budowania (SDK)
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
+ARG BUILD_CONFIGURATION=Development
 WORKDIR /src
-COPY ["LanguageTeacher.API/LanguageTeacher.API.csproj", "LanguageTeacher.API/"]
-RUN dotnet restore "./LanguageTeacher.API/LanguageTeacher.API.csproj"
-COPY . .
-WORKDIR "/src/LanguageTeacher.API"
-RUN dotnet build "./LanguageTeacher.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
+# Kopiowanie pliku projektu
+COPY ["LanguageTeacher.API.csproj", "LanguageTeacher.API/"]
+RUN dotnet restore "LanguageTeacher.API/LanguageTeacher.API.csproj"
+
+# Kopiowanie całego kodu
+WORKDIR "/src/LanguageTeacher.API"
+COPY . .
+RUN dotnet build "LanguageTeacher.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# Etap publikacji
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./LanguageTeacher.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "LanguageTeacher.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
+# Finalny obraz
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
