@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LanguageTeacher", "Language
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTeacher.API", "LanguageTeacher\LanguageTeacher.API\LanguageTeacher.API.csproj", "{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTeacher.App", "LanguageTeacher\LanguageTeacher.App\LanguageTeacher.App\LanguageTeacher.App.csproj", "{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B} = {A5EB5E3B-9805-47F5-AACC-D3BB986A01D5}
+		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A} = {A5EB5E3B-9805-47F5-AACC-D3BB986A01D5}
 	EndGlobalSection
 EndGlobal
