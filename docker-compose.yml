@@ -9,7 +9,6 @@ services:
       - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=${ConnectionStrings__MySqlDatabaseConnection}
-      - Test=${Test} 
     ports:
       - "5000:80"
       - "5001:443"
