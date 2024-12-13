@@ -15,6 +15,7 @@ public class HealthCheckQueryHandler : IRequestHandler<HealthCheckQuery, string>
     public async Task<string> Handle(HealthCheckQuery request, CancellationToken cancellationToken)
     {
         var mySetting = _configuration["Test"];
-        return $"HealthCheckQueryTest - SettingValue: {mySetting}";
+        var mySetting2 = _configuration["ConnectionStrings:MySqlDatabaseConnection"];
+        return $"HealthCheckQueryTest - SettingValue: {mySetting} {mySetting2}";
     }
 }

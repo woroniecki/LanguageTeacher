@@ -22,7 +22,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Hea
 
 builder.Services.AddDbContext<LanguageTeacherDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("SqlDatabaseConnection"),
+        builder.Configuration.GetConnectionString("MySqlDatabaseConnection"),
         new MySqlServerVersion(new Version(8, 0, 31)),
         b => b.MigrationsAssembly("LanguageTeacher.API")
     ));
@@ -30,11 +30,11 @@ builder.Services.AddDbContext<LanguageTeacherDbContext>(options =>
 var app = builder.Build();
 
 // Apply migrations automatically
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<LanguageTeacherDbContext>();
-    dbContext.Database.Migrate(); // Applies any pending migrations
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var dbContext = scope.ServiceProvider.GetRequiredService<LanguageTeacherDbContext>();
+//    dbContext.Database.Migrate(); // Applies any pending migrations
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -8,7 +8,7 @@ services:
     environment:
       ASPNETCORE_URLS: http://+:80
       ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__DefaultConnection: Server=localhost;Database=language_teacher_db;User=root;Password=password;
+      ConnectionStrings__MySqlDatabaseConnection: Server=localhost;Database=language_teacher_db;User=root;Password=password;
       Test: thisIsTest
     ports:
       - "5000:80"
