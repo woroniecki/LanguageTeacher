@@ -9,13 +9,17 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Development
 WORKDIR /src
 
-# Kopiowanie pliku projektu
-COPY ["LanguageTeacher.API.csproj", "LanguageTeacher.API/"]
-RUN dotnet restore "LanguageTeacher.API/LanguageTeacher.API.csproj"
-
-# Kopiowanie całego kodu
-WORKDIR "/src/LanguageTeacher.API"
+# Kopiowanie wszystkich plików projektu
 COPY . .
+
+# Przywracanie zależności
+RUN dotnet restore "LanguageTeacher/LanguageTeacher.API/LanguageTeacher.API.csproj"
+
+# Kopiowanie całego kodu źródłowego
+COPY . .
+
+# Budowanie projektu
+WORKDIR "/src/LanguageTeacher/LanguageTeacher.API"
 RUN dotnet build "LanguageTeacher.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Etap publikacji
