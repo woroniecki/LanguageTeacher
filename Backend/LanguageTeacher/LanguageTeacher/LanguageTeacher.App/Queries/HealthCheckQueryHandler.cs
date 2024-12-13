@@ -1,15 +1,20 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Configuration;
 
 namespace LanguageTeacher.App.Queries;
 
 public class HealthCheckQueryHandler : IRequestHandler<HealthCheckQuery, string>
 {
-    public HealthCheckQueryHandler()
+    private readonly IConfiguration _configuration;
+
+    public HealthCheckQueryHandler(IConfiguration configuration)
     {
+        _configuration = configuration;
     }
 
     public async Task<string> Handle(HealthCheckQuery request, CancellationToken cancellationToken)
     {
-        return "HealthCheckQueryTest";
+        var mySetting = _configuration["Test"];
+        return $"HealthCheckQueryTest - SettingValue: {mySetting}";
     }
 }
