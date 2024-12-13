@@ -1,4 +1,6 @@
 using LanguageTeacher.App.Queries;
+using LanguageTeacher.Domain;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +20,21 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(HealthCheckQuery).Assembly));
 
+builder.Services.AddDbContext<LanguageTeacherDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("SqlDatabaseConnection"),
+        new MySqlServerVersion(new Version(8, 0, 31)),
+        b => b.MigrationsAssembly("LanguageTeacher.API")
+    ));
+
 var app = builder.Build();
+
+// Apply migrations automatically
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<LanguageTeacherDbContext>();
+    dbContext.Database.Migrate(); // Applies any pending migrations
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
