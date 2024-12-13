@@ -7,7 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LanguageTeacher", "Language
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTeacher.API", "LanguageTeacher\LanguageTeacher.API\LanguageTeacher.API.csproj", "{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTeacher.App", "LanguageTeacher\LanguageTeacher.App\LanguageTeacher.App\LanguageTeacher.App.csproj", "{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTeacher.Domain", "LanguageTeacher\LanguageTeacher.Domain\LanguageTeacher.Domain.csproj", "{0FBA64CB-F69A-465C-9C50-180BF4977412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTeacher.App", "LanguageTeacher\LanguageTeacher.App\LanguageTeacher.App.csproj", "{42C36D32-7617-497D-BE05-C686BA05B039}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C9B9DFCE-EA6C-464D-AD01-13C358F0AB7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtilities.Domain", "CommonUtilities\CommonUtilities.Domain\CommonUtilities.Domain.csproj", "{8BBBB6A6-7347-4AD1-969B-A544902AD7B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +25,26 @@ Global
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBA64CB-F69A-465C-9C50-180BF4977412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBA64CB-F69A-465C-9C50-180BF4977412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBA64CB-F69A-465C-9C50-180BF4977412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBA64CB-F69A-465C-9C50-180BF4977412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C36D32-7617-497D-BE05-C686BA05B039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C36D32-7617-497D-BE05-C686BA05B039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C36D32-7617-497D-BE05-C686BA05B039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C36D32-7617-497D-BE05-C686BA05B039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BBBB6A6-7347-4AD1-969B-A544902AD7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BBBB6A6-7347-4AD1-969B-A544902AD7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BBBB6A6-7347-4AD1-969B-A544902AD7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BBBB6A6-7347-4AD1-969B-A544902AD7B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC3FC023-5A29-40A9-90F3-97CDCB735E6B} = {A5EB5E3B-9805-47F5-AACC-D3BB986A01D5}
-		{24C4F8A4-041D-43A0-9AE5-CC41C91F8C0A} = {A5EB5E3B-9805-47F5-AACC-D3BB986A01D5}
+		{0FBA64CB-F69A-465C-9C50-180BF4977412} = {A5EB5E3B-9805-47F5-AACC-D3BB986A01D5}
+		{42C36D32-7617-497D-BE05-C686BA05B039} = {A5EB5E3B-9805-47F5-AACC-D3BB986A01D5}
+		{8BBBB6A6-7347-4AD1-969B-A544902AD7B6} = {C9B9DFCE-EA6C-464D-AD01-13C358F0AB7A}
 	EndGlobalSection
 EndGlobal
