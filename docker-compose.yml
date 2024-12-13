@@ -6,10 +6,10 @@ services:
       context: Backend/LanguageTeacher
       dockerfile: LanguageTeacher/LanguageTeacher.API/Dockerfile
     environment:
-      ASPNETCORE_URLS: http://+:80
-      ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__MySqlDatabaseConnection: Server=localhost;Database=language_teacher_db;User=root;Password=password;
-      Test: thisIsTest
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=${ConnectionStrings__MySqlDatabaseConnection}
+      - Test=${Test} 
     ports:
       - "5000:80"
       - "5001:443"
