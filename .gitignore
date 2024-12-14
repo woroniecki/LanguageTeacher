@@ -139,3 +139,5 @@ _NCrunch
 *.db
 *.db-shm
 *.db-wal
+
+*.tmp
