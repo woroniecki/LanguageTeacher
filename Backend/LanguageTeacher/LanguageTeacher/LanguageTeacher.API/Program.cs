@@ -22,7 +22,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Hea
 
 builder.Services.AddDbContext<LanguageTeacherDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("MySqlDatabaseConnection"),
+        builder.Configuration.GetConnectionString("MySqlDatabaseConnectionLanguageTeacher"),
         new MySqlServerVersion(new Version(8, 0, 31)),
         b => b.MigrationsAssembly("LanguageTeacher.API")
     ));
