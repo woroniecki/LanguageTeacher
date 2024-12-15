@@ -17,6 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtilities.Domain", "C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA4BD371-FAC7-44D8-B8AD-6CE73A8A424D}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		..\..\docker-compose-local.yml = ..\..\docker-compose-local.yml
 		..\..\docker-compose.yml = ..\..\docker-compose.yml
 	EndProjectSection
@@ -28,6 +29,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.App", "UserManagement\UserManagement.App\UserManagement.App.csproj", "{A90FE160-FE2E-462A-AB38-B9D4E7A38A9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Domain", "UserManagement\UserManagement.Domain\UserManagement.Domain.csproj", "{573B29A6-72E6-4692-9349-BF4D33B745AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtilities.App", "CommonUtilities\CommonUtilities.App\CommonUtilities.App.csproj", "{F1B72E28-8F7E-4DD4-AAB1-5A4B6DB4A22D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtilities.API", "CommonUtilities\CommonUtilities.API\CommonUtilities.API.csproj", "{BAC3EA97-C2BD-4733-8CB8-BCF37C2B30CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +68,14 @@ Global
 		{573B29A6-72E6-4692-9349-BF4D33B745AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573B29A6-72E6-4692-9349-BF4D33B745AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{573B29A6-72E6-4692-9349-BF4D33B745AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B72E28-8F7E-4DD4-AAB1-5A4B6DB4A22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B72E28-8F7E-4DD4-AAB1-5A4B6DB4A22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B72E28-8F7E-4DD4-AAB1-5A4B6DB4A22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B72E28-8F7E-4DD4-AAB1-5A4B6DB4A22D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC3EA97-C2BD-4733-8CB8-BCF37C2B30CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC3EA97-C2BD-4733-8CB8-BCF37C2B30CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC3EA97-C2BD-4733-8CB8-BCF37C2B30CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC3EA97-C2BD-4733-8CB8-BCF37C2B30CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,5 +88,7 @@ Global
 		{3C5F81B5-8B33-40DA-BC68-E9D9497953D0} = {36F54DBF-975C-4D43-AAE7-E5E52DE785B3}
 		{A90FE160-FE2E-462A-AB38-B9D4E7A38A9B} = {36F54DBF-975C-4D43-AAE7-E5E52DE785B3}
 		{573B29A6-72E6-4692-9349-BF4D33B745AE} = {36F54DBF-975C-4D43-AAE7-E5E52DE785B3}
+		{F1B72E28-8F7E-4DD4-AAB1-5A4B6DB4A22D} = {C9B9DFCE-EA6C-464D-AD01-13C358F0AB7A}
+		{BAC3EA97-C2BD-4733-8CB8-BCF37C2B30CC} = {C9B9DFCE-EA6C-464D-AD01-13C358F0AB7A}
 	EndGlobalSection
 EndGlobal

@@ -1,11 +1,15 @@
+using CommonUtilities.API.Extensions;
+using CommonUtilities.App.PipelineBehaviours.Extensions;
+using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using UserManagement.App.Queries;
+using UserManagement.App.Repositories.Extensions;
 using UserManagement.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -18,16 +22,26 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(HealthCheckQuery).Assembly));
+builder.Services.AddRepositories();
 
-builder.Services.AddDbContext<UserManagementDbContext>(options =>
+builder.Services.AddDbContext<DbContext, UserManagementDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("MySqlDatabaseConnectionUserManagement"),
         new MySqlServerVersion(new Version(8, 0, 31)),
         b => b.MigrationsAssembly("UserManagement.API")
     ));
 
+//Add mediatr
+builder.Services.AddFluentValidationPipelineBehavior();
+builder.Services.AddLoggingBehaviour();
+builder.Services.AddTransactionAndDomainEventsBehavior();
+
+builder.Services.AddValidatorsFromAssembly(typeof(HealthCheckQuery).Assembly);
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(HealthCheckQuery).Assembly));
+
 var app = builder.Build();
+
+app.UseCustomExceptionHandler();
 
 // Apply migrations automatically
 using (var scope = app.Services.CreateScope())
