@@ -5,7 +5,7 @@ using UserManagement.Domain.Aggregates;
 
 namespace UserManagement.App.Commands.Register;
 
-internal sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, Unit>
+public sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, Unit>
 {
     private readonly IAccountRepository _accountRepository;
 
